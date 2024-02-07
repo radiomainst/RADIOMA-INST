@@ -115,17 +115,17 @@
                 const reader = new FileReader();
                 reader.onload = () => {
                     const text = reader.result;
-                    // Parse the JSON
+                    
                     const parsedMessage = JSON.parse(text);
-                    // Add the content and color to the chat
+                    
                     addMessage(parsedMessage.content, parsedMessage.color);
                     messagesContainer.scrollTop = messagesContainer.scrollHeight;
                 };
                 reader.readAsText(message);
             } else {
-                // Parse the JSON
+               
                   const parsedMessage = JSON.parse(message);
-                // Add the content and color to the chat
+               
                 addMessage(parsedMessage.content, parsedMessage.color);
                 messagesContainer.scrollTop = messagesContainer.scrollHeight;
             }
@@ -135,23 +135,23 @@
         function addMessage(message, color) {
             const messageElement = document.createElement('div');
             messageElement.textContent = message;
-            //messageElement.style.color = color;
+            
             messagesContainer.appendChild(messageElement);
         }
 
         function getRandomColor() {
             const colors = ['#ff6666', '#66cc66', '#6666ff', '#999999', '#ff99cc'];
 
-            // Rimuovi l'ultimo colore generato dalla lista dei colori disponibili
+      
             const availableColors = colors.filter(c => c !== lastGeneratedColor);
 
-            // Se non ci sono colori disponibili, reimposta la lista completa
+
             const updatedColors = availableColors.length > 0 ? availableColors : colors;
 
             const randomIndex = Math.floor(Math.random() * updatedColors.length);
             const selectedColor = updatedColors[randomIndex];
 
-            // Salva il colore appena generato come l'ultimo colore utilizzato
+         
             lastGeneratedColor = selectedColor;
 
             return selectedColor;
