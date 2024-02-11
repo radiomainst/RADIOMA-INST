@@ -164,6 +164,16 @@
             messageInput.value = words[0];
         }
 
+        function limitAndCheckInput() {
+    let inputValue = messageInput.value.trim();
+
+    inputValue = inputValue.replace(/[^a-zA-Z]/g, '');
+
+    messageInput.value = inputValue;
+
+}
+
+
         function handleKeyPress(event) {
             if (event.key === 'Enter') {
                 sendMessage();
