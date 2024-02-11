@@ -164,18 +164,6 @@
             messageInput.value = words[0];
         }
 
-function handleKeyPress(event) {
-    const allowedKeys = /^[a-zA-Z]+$/;
-    if (!allowedKeys.test(event.key)) {
-        event.preventDefault();
-    }
-    if (event.key === 'Enter') {
-        sendMessage();
-    }
-}
-
-
-
 
         function handleKeyPress(event) {
             if (event.key === 'Enter') {
