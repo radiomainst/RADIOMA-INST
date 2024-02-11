@@ -164,14 +164,16 @@
             messageInput.value = words[0];
         }
 
-        function limitAndCheckInput() {
-    let inputValue = messageInput.value.trim();
-
-    inputValue = inputValue.replace(/[^a-zA-Z]/g, '');
-
-    messageInput.value = inputValue;
-
+function handleKeyPress(event) {
+    const allowedKeys = /^[a-zA-Z]+$/;
+    if (!allowedKeys.test(event.key)) {
+        event.preventDefault();
+    }
+    if (event.key === 'Enter') {
+        sendMessage();
+    }
 }
+
 
 
         function handleKeyPress(event) {
