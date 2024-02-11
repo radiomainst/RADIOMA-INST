@@ -159,10 +159,10 @@
 
 
         function limitAndCheckInput(event) {
-            const inputValue = event.target.value.trim();
-            const regex = /^[a-zA-Z]*$/; // Regular expression to match only alphabet letters
-            if (!regex.test(inputValue)) {
-                event.target.value = inputValue.slice(0, -1); // Remove the last character if it's not a letter
+            const inputValue = event.target.value;
+            const alphabetRegex = /^[a-zA-Z]+$/;
+            if (!alphabetRegex.test(inputValue)) {
+                event.target.value = inputValue.slice(0, -1);
             }
         }
 
